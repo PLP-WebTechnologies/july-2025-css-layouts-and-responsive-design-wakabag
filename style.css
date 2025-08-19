@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Navigation Bar using Flexbox */
+.navbar {
+    background-color: #333;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-list li {
+    margin: 0 1rem;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    display: block;
+}
+
+.nav-list a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+/* Main layout using CSS Grid */
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1rem;
+    padding: 1rem;
+    flex: 1; /* Expand to fill available space */
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Content styles */
+.content {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Cards container using Flexbox */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Individual cards */
+.card {
+    background-color: #e2e2e2;
+    flex: 1 1 200px; /* Grow, shrink, basis */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Responsive Design with Media Queries */
+
+/* Tablet view */
+@media (max-width: 1024px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stack sidebar above content */
+    .main-layout {
+        display: block;
+    }
+
+    .sidebar, .content {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+    /* Navigation menu becomes vertical */
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .nav-list li {
+        margin: 0.5rem 0;
+    }
+
+    /* Adjust main layout to single column */
+    .main-layout {
+        display: block;
+    }
+
+    /* Cards become full width */
+    .cards-container {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: none;
+        width: 100%;
+    }
+}
